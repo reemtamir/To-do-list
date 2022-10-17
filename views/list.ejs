@@ -5,36 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do list</title>
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
-  <body >
-    <% if(kindOfDay.includes("Friday")||kindOfDay.includes("Saturday") ){ %>
-    <h1 style="color: red">Today is: <%= kindOfDay%></h1>
-    <img
-      style="width: 200px; height: 100px"
-      src="<%= kindOfImage%>"
-      alt="today's image'"
-    />
-
-    <% }else{%>
-
-    <h1 style="color: blue">Today is: <%= kindOfDay%></h1>
-    <img
-      style="width: 200px; height: 100px"
-      src="<%= kindOfImage%>"
-      alt="today's image'"
-    />
-    <%}%>
-    <ul>
+  <body>
+    <div class="box" id="heading">
+      <h1><%= kindOfDay%></h1>
+      <img
+        style="width: 200px; height: 100px"
+        src="<%= kindOfImage%>"
+        alt="today's image'"
+      />
+    </div>
+    <div class="box">
     
+        <% for(var i=0; i<tasks.length; i++) {%>
+          <div class="item">
+         <input type="checkbox" >   
+          <p ><%= tasks[i]%></p>
+        </div>
+        <% } %>
+      
+        <form class="item" action="/" method="post">
+          <input autocomplete="off" type="text" name="task" placeholder="New task" />
+          <button type="submit">+</button>
+        </form>
+    </div>
 
-      <% for(var i=0; i<tasks.length; i++) {%>
-        <li><%= tasks[i]%></li>
-     <% } %>
-    </ul>
-   
-    <form action="/" method="post">
-      <input type="text" name="task" id="" />
-      <button type="submit">Add Task</button>
-    </form>
   </body>
 </html>
