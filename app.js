@@ -47,6 +47,7 @@ app.get('/', (req, res) => {
     kindOfImage: image,
     tasks: tasks,
   });
+  console.log('ff');
 });
 app.post('/', function (req, res) {
   let task = req.body.task;
