@@ -95,3 +95,20 @@ footer {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+.footer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.footer img {
+  height: 40px;
+  margin-left: 20px;
+}
+
+.copyright {
+  font-family: 'Dancing Script', cursive;
+  color: rgb(75, 21, 64);
+  font-size: 25px;
+  padding: 8px 0;
+  text-align: center;
+}
