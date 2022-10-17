@@ -47,7 +47,6 @@ app.get('/', (req, res) => {
     kindOfImage: image,
     tasks: tasks,
   });
-  console.log('ff');
 });
 app.post('/', function (req, res) {
   let task = req.body.task;
@@ -58,4 +57,3 @@ app.post('/', function (req, res) {
 app.listen(3000, () => {
   console.log('The server is running on port 3000');
 });
-
