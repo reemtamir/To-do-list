@@ -1,21 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { json } = require('body-parser');
+//const { json } = require('body-parser');
+const date = require(__dirname + '/date.js');
 const app = express();
+
 let items = ['Do something'];
 let workTasks = [];
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.get('/', (req, res) => {
-  const today = new Date();
-  const options = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-  };
-  let day = today.toLocaleDateString('en-US', options);
-
+  const day = date.getDate();
   res.render('list', {
     listTitle: day,
     newListItem: items,
